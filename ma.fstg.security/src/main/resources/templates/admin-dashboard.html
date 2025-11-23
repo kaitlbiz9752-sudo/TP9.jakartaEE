@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Administrateur</title>
+</head>
+<body>
+
+<h2>Espace Administrateur</h2>
+<p>Section réservée aux utilisateurs ayant le rôle ADMIN.</p>
+
+<!-- Déconnexion en POST avec CSRF -->
+<form th:action="@{/logout}" method="post" style="margin-top: 10px;">
+    <input type="hidden"
+           th:name="${_csrf.parameterName}"
+           th:value="${_csrf.token}" />
+    <button type="submit">Déconnexion</button>
+</form>
+
+</body>
+</html>
